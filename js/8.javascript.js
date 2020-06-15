@@ -460,7 +460,7 @@ var nummot = 0;
    function strtok(str_1, str_2, n)
 {
    
-   var n = parseInt(prompt("renseigner la position du mot que vous souhaitez dans str1"));
+      var n = parseInt(prompt("renseigner la position du mot que vous souhaitez dans str1"));
 
    /*METHODE tant que 
    le nombre de caractère est < max lenght
@@ -762,27 +762,49 @@ var resultat;
             return tableau;
          }
 
+
+
+
 // pour retourner  etpouvoir modifier la valeur taille, il faut l'afferter au inveau global
 
 taille=initab(taille);
 
-         // FONCTION INFOTAB /remplissagetableau
 
-         function infotab (tableau)
-         {
-            document.write("les données du tableau sont: "+"<br>");
-            for (var i = 0; i < tableau.length; i++) 
-               {
-                  document.write(tableau[i]+"<br>");
-               }
-            return tableau;
-         }
 
-infotab(tableau);
 
-// FONCTION RECHERCHETAB: pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
+texte = ("veuillez choisir le menu:" +"<br>"+
+    "1) affichage des postes"+"<br>"+
+    "2) affichag contenu d'un poste"+"<br>"+
+    "3) affichage max et moyenne");
+choixmenu = getinteger(nombre, texte);
 
-function recherchetab(nombre)
+
+    
+if (choixmenu =="1")
+      {
+            // FONCTION INFOTAB /remplissagetableau
+
+            function infotab (tableau)
+            {
+               document.write("les données du tableau sont: "+"<br>");
+               for (var i = 0; i < tableau.length; i++) 
+                  {
+                     document.write(tableau[i]+"<br>");
+                  }
+               return tableau;
+            }
+
+         infotab(tableau);
+
+      }
+
+
+if (choixmenu =="2")
+      {
+         
+               // FONCTION RECHERCHETAB: pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
+
+         function recherchetab(nombre)
 
          {
          texte="veuillez renseigner la position de la valeur recherchée dans le tableau";
@@ -792,12 +814,17 @@ function recherchetab(nombre)
          return tableau;
          }
 
-recherchetab(nombre);
+         recherchetab(nombre);
+
+       }
+
+if (choixmenu =="3")
+       {
 
 
-// FONCTION MOYENNETAB: qui affichera le maximum et la moyenne des postes.
+         // FONCTION MOYENNETAB: qui affichera le maximum et la moyenne des postes.
 
-function moyennetab()
+         function moyennetab()
          {
             console.log("valeur de taille dans la fonction moyennetab: "+taille);
             var totaltableau = 0;
@@ -814,49 +841,14 @@ function moyennetab()
             document.write("la moyenne des éléments du tableau est: "+moyennetableau+"<br>");
             // return totaltableau,moyennetableau;
          }
-         
-moyennetab();
-console.log("valeur de taille dans la fonction moyennetab apres fonction: "+taille);
-}
+
+         moyennetab();
+         console.log("valeur de taille dans la fonction moyennetab apres fonction: "+taille);
+       }
+} // fermeture bouton
 
 
-// EXERCICE 10.1
-
-    texte = ("veuillez choisir le menu:" +"<br>"+
-    "1) affichage des postes"+"<br>"+
-    "2) affichag contenu d'un poste"+"<br>"+
-    "3) affichage max et moyenne");
-
-
-
-
-
-                
 
    
    
-   /*
-    if (choixmenu =="1")
-          {
  
-          }
-    
-    if (choixmenu =="2")
-          {
-             //demande l'index de l'article à sortir du tableau
-             var index = parseInt(prompt("saisissez l'index de l'élément que vous souhaitez sortir du tableau"));
-             document.write("l'élément du tableau associé à l'index"+index+"est: " +InitTab[index-1]);
-          }
-    
-    if (choixmenu =="3")
-          {
-                
-
-    for (var i = 0; i <= InitTab.length-1; i++) 
-    {
-       //affiche le contenu des postes de mon tableau:
-       document.write(InitTab[i]+" ");
-    }
-
-          }
-*/
