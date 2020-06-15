@@ -845,10 +845,100 @@ if (choixmenu =="3")
          moyennetab();
          console.log("valeur de taille dans la fonction moyennetab apres fonction: "+taille);
        }
+
+
+} // fermeture bouton
+       
+/*EXERCICE 10.3 TRI A BULLE*/
+
+var bouton13= document.getElementById("bouton13");
+bouton13.addEventListener("click",clickbtn13);
+function clickbtn13()
+
+
+{ //ouverture bouton
+
+   function sort(tab){
+      var changed;
+      do{
+          changed = false;
+          for(var i=0; i < tab.length-1; i++) {
+              if(tab[i] > tab[i+1]) {
+                  var tmp = tab[i];
+                  tab[i] = tab[i+1];
+                  tab[i+1] = tmp;
+                  changed = true;
+              }
+          }
+      } while(changed);
+  }
+  var tab = [5, 8, 11, 6, 1, 9, 3];
+  sort(tab);
+  document.write(tab +"<br>");
+
+
+
+  var tab = [14, 22, 95, 84, 12, 53, 21];
+  sort(tab);
+  document.write(tab);
+
+
+
+
+
 } // fermeture bouton
 
 
 
-   
-   
+   /* à tester sans  variable booléenne
+   var tableau = [1, 6, 12, 85, 42];
+                  // document.write(tableau[3]);
+
+
+      for (var i = 0; i <= tableau.lenght-1; i++)
+      {
+         var  tableau;
+         if (parseInt(tableau[i]) > parseInt(tableau[i+1]))
+            {
+                  var tmp = tab[i];
+                  tab[i] = tab[i+1];
+                  tab[i+1] = tmp;
+                  changed = true;
+            }
+
+      }
+
+
+
+      /* Methode variable booléenne 
+
+      {
+    var bool;
+    do{
+        bool = false;
  
+        for(var b=0; b < tableau.length-1; b++) 
+        {
+ 
+            if(tableau[b] > tableau[b+1]) {
+                var tmp = tableau[b];
+                tableau[b] = tableau[b+1];
+                tableau[b+1] = tmp;
+                bool = true;
+ 
+            }
+        }
+    } while(bool);
+    
+    document.write("tableau trier : " + tableau + "<br>");
+
+}*/
+
+
+
+
+
+
+
+
+
